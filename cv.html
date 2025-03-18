@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unza Rubab - Web & App Developer Portfolio">
+    <meta name="keywords" content="Unza Rubab, Web Developer, App Developer, HTML, CSS, Python, JavaScript, C#">
+    <meta name="author" content="Unza Rubab">
+    <title>Unza Rubab - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #ff6b6b;
+            --accent-color: #4ecdc4;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --section-bg: #ffffff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f4f8;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--light-color);
+            border-radius: 15px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+        
+        .profile {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(74, 111, 165, 0.1), rgba(255, 107, 107, 0.1));
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .profile::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-icon i {
+            font-size: 48px;
+            color: white;
+        }
+        
+        .profile h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+        
+        .profile h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .profile p {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--section-bg);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(74, 111, 165, 0.2);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section p {
+            margin-bottom: 10px;
+        }
+        
+        .section p strong {
+            color: var(--primary-color);
+        }
+        
+        .section ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+        
+        .section ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skills span {
+            padding: 8px 15px;
+            background: linear-gradient(135deg, var(--primary-color), rgba(74, 111, 165, 0.8));
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .skills span:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        #downloadPDF {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        #downloadPDF:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px 0;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-color);
+        }
+        
+        .education-year {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .language-level {
+            flex-grow: 1;
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            .profile {
+                padding: 20px 10px;
+            }
+            
+            .profile-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .profile h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .skills {
+                gap: 8px;
+            }
+            
+            .skills span {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(6) { animation-delay: 0.5s; }
+        .section:nth-child(7) { animation-delay: 0.6s; }
+        .section:nth-child(8) { animation-delay: 0.7s; }
+    </style>
+
+    <!-- Schema Markup for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Unza Rubab",
+      "jobTitle": "Web & App Developer",
+      "email": "unzakhan408@gmail.com",
+      "telephone": "+92 333 899 5925",
+      "url": "https://github.com/Unza-Rubab",
+      "sameAs": [
+        "https://github.com/Unza-Rubab"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sargodha",
+        "addressCountry": "Pakistan"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of Sargodha"
+      },
+      "knowsAbout": ["HTML", "CSS", "JavaScript", "Python", "C#", "App Development", "Web Development", "Responsive Design"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Certification",
+          "name": "Web Design for Everybody - Coursera"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Certification",
+          "name": "Android App Development - Coursera"
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "University of Sargodha",
+        "description": "Capstone Project"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile">
+            <div class="profile-icon">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Unza Rubab</h1>
+            <h3>Web & App Developer</h3>
+            <p>Final Year Computer Science Student | University of Sargodha</p>
+        </div>
+        
+        <div class="section">
+            <h2><i class="fas fa-envelope-open-text"></i> &nbsp; Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:unzakhan408@gmail.com">unzakhan408@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+923338995925">+92 333 899 5925</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <strong>GitHub</strong><br>
+                        <a href="https://github.com/Unza-Rubab" target="_blank">github.com/Unza-Rubab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-bullseye"></i> &nbsp; Professional Objective</h2>
+            <p>To secure a challenging role in a <span class="highlight">dynamic environment</span> where I can utilize my skills in <span class="highlight">web and app development</span> to create <span class="highlight">innovative digital solutions</span>. My goal is to <span class="highlight">continuously learn and grow</span> while contributing to meaningful projects that enhance user experience and business efficiency.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-user-circle"></i> &nbsp; About Me</h2>
+            <p>I am a passionate Web and App Developer with expertise in HTML, CSS, JavaScript, Python, and C#. I specialize in designing and developing responsive, interactive, and user-friendly applications for both web and mobile platforms. My focus is on creating efficient, scalable, and modern solutions that enhance user experience.</p>
+            <p>Currently pursuing my Bachelor's in Computer Science (8th Semester) at the University of Sargodha, I am constantly improving my skills to stay ahead in the evolving tech landscape. I am detail-oriented, adaptable, and committed to delivering high-quality work that meets client requirements.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-laptop-code"></i> &nbsp; Technical Skills</h2>
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>C#</span>
+                <span>Responsive Design</span>
+                <span>Mobile App Development</span>
+              
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-briefcase"></i> &nbsp; Work Experience</h2>
+            <div class="education-item">
+                <h3>Capstone Project</h3>
+                <p>University of Sargodha</p>
+                <p class="education-year">Current</p>
+                <p>As a final year Computer Science student, I am currently working on a comprehensive capstone project that applies my web and app development skills in a real-world context. This project involves designing and implementing innovative solutions while adhering to industry best practices.</p>
+            </div>
+            <p>I am actively seeking internship opportunities to gain professional experience and further develop my skills in a collaborative environment.</p>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-certificate"></i> &nbsp; Certifications</h2>
+            <ul>
+                <li>
+                    <strong>Web Design for Everybody</strong> – Coursera
+                    <p>Comprehensive training in HTML, CSS, JavaScript, and responsive web design principles.</p>
+                </li>
+                <li>
+                    <strong>Android App Development</strong> – Coursera
+                    <p>In-depth course covering Android app architecture, UI design, and development fundamentals.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-graduation-cap"></i> &nbsp; Education</h2>
+            <div class="education-item">
+                <h3>Bachelor in Computer Science</h3>
+                <p>University of Sargodha</p>
+                <p class="education-year">2021 - Present (8th Semester)</p>
+            </div>
+            <div class="education-item">
+                <h3>FSC Pre-Engineering</h3>
+                <p>Superior College Sargodha</p>
+                <p class="education-year">2019 - 2021</p>
+            </div>
+            <div class="education-item">
+                <h3>Matriculation</h3>
+                <p>Ghazali Education School Dharema</p>
+                <p class="education-year">2017 - 2019</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-language"></i> &nbsp; Languages</h2>
+            <div class="language-item">
+                <div style="width: 100px;"><strong>Urdu</strong></div>
+                <div class="language-level">
+                    <div class="language-progress" style="width: 100%;"></div>
+                </div>
+                <div>Native</div>
+            </div>
+            <div class="language-item">
+                <div style="width: 100px;"><strong>English</strong></div>
+                <div class="language-level">
+                    <div class="language-progress" style="width: 85%;"></div>
+                </div>
+                <div>Fluent</div>
+            </div>
+        </div>
+
+        <button id="downloadPDF">
+            <i class="fas fa-download"></i> Download as PDF
+        </button>
+
+        <footer>
+            <p>&copy; 2025 Unza Rubab - All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('downloadPDF').addEventListener('click', function() {
+            alert('PDF download functionality would be implemented here with appropriate libraries.');
+        });
+        
+        // Add hover effects to sections
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.15)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    </script>
+</body>
+</html>
